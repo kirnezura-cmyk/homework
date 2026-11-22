@@ -1,46 +1,55 @@
-from os import name
-from unittest import result
+from loguru import logger
+
+def get_multiplier() -> int | None:
+    """
+    Purpose: Ask user to get multiplicator
+    :return: int value
+    """
+    question_to_user = "Enter a number only int: "
+    user_input = input(question_to_user)
+
+    if user_input.isdecimal():
+        logger.info(f"User selected {user_input}")
+        return int(user_input)
+
+    logger.info(f"User selected wrong value = {user_input}")
+    return None
 
 
-def getmulti():
-    multiplier = input("Enter a number: ")
-    if multiplier.isdigit():
-        print("good")
-        return int(multiplier)
-    else:
-        print("error")
-        return getmulti()
-if name == '__main__':
-    getmulti()
+def perform_multiplication_on_list(user_list: list[int], mult: int) -> list[int]:
+    """
+    Perform main task of homework
+    :param user_list: list of user numbers
+    :param mult: multiplicator type int
+    :return: multiplied list
+    """
 
-def Newlist():
-    MList = input("Enter a list: ")
-    if MList.isdigit():
-        print("good")
-        return int(MList)
-    else:
-        print("error")
-        return Newlist()
+    #  Variant I
+    # for item in enumerate(user_list):
+    #     index = item[0]
+    #     value = item[1] * mult
+    #     user_list[index] = value
 
-result = [int(x) for x in MList.split()]
-return result
+    # Variant II
+    new_list = [item * mult for item in user_list]
+
+    # Variant III
+    # result = list(map(lambda item: item * mult, user_list))
+
+    return new_list
 
 
-def multiplication(multiplier, result):
-        Dlist = [x * multiplier for x in result]
-        print(Dlist)
 
-m = getmulti()
-lst = Newlist()
+"""
+ Homework
+ Use list and each value multiply by given number
+ 1. List
+ 2. Multiplier
+"""
+if __name__ == '__main__':
 
-mult=(m, lst)
-
-#недороботаная часть хочу сделоть проверку в функцыи создание листа
-
-#def probing(MList):
-    #if MList.isdigit():
-      #  print("good")
-      #  return int(MList)
-  #  else:
-   #     print("error")
-  #      return MList
+    user_list = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+    mult = get_multiplier()
+    if mult is not None:
+        searched_list = perform_multiplication_on_list(user_list, mult)
+        logger.info(f"New list: {searched_list}")
