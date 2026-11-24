@@ -37,4 +37,3 @@ npuut =  input ("впишыте знак")
 count = Text.count(npuut)
 
 print(count)
-
