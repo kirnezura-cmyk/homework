@@ -33,7 +33,30 @@ Text="С Николаем Максимычем Путохиным приключ
 "На другой день он, бодрый и весёлый, искал уже место, а через неделю нашёл его… Пережитая им беда многое изменила в нём. Когда он видит пьяных, то уже не смеется и не осуждает, как прежде. Он любит подавать милостыню пьяным нищим и часто говорит:"
 "— Порок не в том, что мы пьянствуем, а в том, что не поднимаем пьяных."
 "Может быть, он и прав."
-npuut =  input ("впишыте знак")
-count = Text.count(npuut)
 
-print(count)
+
+def count_char_in_text(text: str, search_value: list[str]) -> list[int]:
+    """
+    Select character count
+    :param search_value: list[string]
+    :param text: string
+    :return: int value
+    """
+    return_value_list = []
+    for val in search_value:
+        temp = text.count(val)
+        return_value_list.append(temp)
+
+    return return_value_list
+
+"""
+ Homework
+ Use text as object to search
+ Count selected characters
+"""
+if __name__ == '__main__':
+
+    search_char = [" ", ",", "."]
+    count = count_char_in_text(text=Text,
+                               search_value=search_char)
+    print(f"Searched characters {search_char} found number: {count}")
