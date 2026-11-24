@@ -9,17 +9,15 @@ LOCAL_DATABASE = dict()
  2. Amount student must nor less then 3
  3. Method to add
  4. Method search existing name  or return note that no such 
- 
 """
 if __name__ == '__main__':
-
-    student = { 'name': 'Gena',
-                'age': 19,
-                'height': 179,
-                'weight': 80 }
-
-    LOCAL_DATABASE.update({'Gena':student})
-
+    #
+    # student = { 'name': 'Gena',
+    #             'age': 19,
+    #             'height': 179,
+    #             'weight': 80 }
+    #
+    # LOCAL_DATABASE.update({'Gena':student})
 
     logger.info(LOCAL_DATABASE)
     pass
