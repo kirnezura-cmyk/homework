@@ -258,7 +258,8 @@ def ex6():
 
     input(spaces)
     print(
-        "\nstring.whitespace A string containing all ASCII characters that are considered whitespace. This includes the characters space, tab, linefeed, return, formfeed, and vertical tab.")
+        "\nstring.whitespace A string containing all ASCII characters that are considered whitespace. "
+        "This includes the characters space, tab, linefeed, return, formfeed, and vertical tab.")
     print(string.whitespace)
     input("\n>>>string.hexdigits - The string '0123456789abcdefABCDEF'.\n")
     input("\n>>>string.octdigits - The string '01234567'..\n")
@@ -410,8 +411,9 @@ def ex10():
     print(
         "\n 7. format_field - simply calls the global format() built-in. The method is provided so that subclasses can override it.")
     print(
-        "\n 8. convert_field  - Converts the value (returned by get_field()) given a conversion type (as in the tuple returned by the parse() method). The default version understands ‘s’ (str), ‘r’ (repr) and ‘a’ (ascii) conversion types.")
-
+        "\n 8. convert_field  - Converts the value (returned by get_field()) given a conversion type "
+        "(as in the tuple returned by the parse() method). The default version understands ‘s’ (str), "
+        "‘r’ (repr) and ‘a’ (ascii) conversion types.")
     input(spaces)
 
 
