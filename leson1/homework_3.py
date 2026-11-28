@@ -2,9 +2,13 @@ from loguru import logger
 
 LOCAL_DATABASE = dict()
 
+#создание студентов
 
 def local_database():
-    print("enter first student")
+    print("========="
+          "enter first student"
+          "=========")
+
     name = input( "enter student name: ")
     age = int(input("enter student age: "))
     height = int(input("enter student height: "))
@@ -19,12 +23,14 @@ def local_database():
     }
 
     LOCAL_DATABASE.update({name: student})
-    logger.info(f"Студент {name} успешно добавлен.")
 
 
 
 
-    print("enter second student")
+
+    print("========="
+          "enter second student"
+          "=========")
     name = input("enter student name: ")
     age = int(input("enter student age: "))
     height = int(input("enter student height: "))
@@ -40,11 +46,13 @@ def local_database():
 
 
     LOCAL_DATABASE.update({name: student})
-    logger.info(f"Студент {name} успешно добавлен.")
 
 
 
-    print("enter third student")
+
+    print("========="
+          "enter third student"
+          "=========")
     name = input("enter student name: ")
     age = int(input("enter student age: "))
     height = int(input("enter student height: "))
@@ -60,20 +68,27 @@ def local_database():
 
 
     LOCAL_DATABASE.update({name: student})
-    logger.info(f"Студент {name} успешно добавлен.")
 
-
+#проверка
 
 local_database()
-germanj
+if len(LOCAL_DATABASE) == 3:
+    print("все ученек добавлены")
+else:
+     print("неверное количество учеников")
 
-logger.info(f"Все 3 студента добавлены: {LOCAL_DATABASE}")
+# поиск студента
 
+def search ():
+  print ("========="
+         "search student"
+         "=========")
 
-
-
-
-
+searchstudent = input("enter student name: ")
+if searchstudent in LOCAL_DATABASE:
+ logger.info(f"Студент найден: {LOCAL_DATABASE[searchstudent]}")
+else:
+    print("такого ученика нет")
 
 
 
